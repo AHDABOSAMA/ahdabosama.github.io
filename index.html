@@ -1,329 +1,801 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ahdab Osama — AI/ML Engineer</title>
+<meta name="theme-color" content="#0A0A14">
+<meta name="description" content="Ahdab Osama — AI/ML and Backend Engineer building intelligent systems, machine learning pipelines, and scalable backend applications.">
+<title>Ahdab Osama — AI/ML & Backend Engineer</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Archivo+Black&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Archivo+Black&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-  :root {
-    --bg: #0A0A14;
-    --panel: #14131F;
-    --panel2: #1B1A29;
-    --ink: #F6F4FF;
-    --muted: #9490B3;
-    --pink: #FF3B7F;
-    --mint: #00E7A0;
-    --amber: #FFCC33;
-    --blue: #5B8CFF;
-    --line: #2A283C;
-  }
+:root {
+  --bg: #0A0A14;
+  --panel: #14131F;
+  --panel2: #1B1A29;
+  --ink: #F6F4FF;
+  --muted: #9490B3;
+  --pink: #FF3B7F;
+  --mint: #00E7A0;
+  --amber: #FFCC33;
+  --blue: #5B8CFF;
+  --line: #2A283C;
+}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Space Grotesk', sans-serif;
-    overflow-x: hidden;
-    position: relative;
-  }
-  body::before {
-    content: '';
-    position: fixed; inset: 0;
-    background:
-      radial-gradient(circle at 15% 8%, rgba(255,59,127,0.14), transparent 40%),
-      radial-gradient(circle at 88% 18%, rgba(91,140,255,0.14), transparent 42%),
-      radial-gradient(circle at 60% 90%, rgba(0,231,160,0.10), transparent 45%);
-    pointer-events: none;
-    z-index: 0;
-  }
+html { scroll-behavior: smooth; }
 
-  .mono { font-family: 'JetBrains Mono', monospace; }
-  a { color: inherit; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
 
-  /* ─── NAV ─────────────────────────── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 18px 44px;
-    background: rgba(10,10,20,0.7);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-logo {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 0.95rem;
-    letter-spacing: 0.02em;
-  }
-  .nav-logo span { color: var(--pink); }
-  .nav-links { display: flex; gap: 26px; list-style: none; }
-  .nav-links a {
-    font-family: 'JetBrains Mono', monospace;
-    text-decoration: none;
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--mint); }
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 8%, rgba(255,59,127,.14), transparent 40%),
+    radial-gradient(circle at 88% 18%, rgba(91,140,255,.14), transparent 42%),
+    radial-gradient(circle at 60% 90%, rgba(0,231,160,.10), transparent 45%);
+  pointer-events: none;
+  z-index: 0;
+}
 
-  /* ─── HERO ────────────────────────── */
+a { color: inherit; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 44px;
+  background: rgba(10,10,20,.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-logo {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: .95rem;
+}
+
+.nav-logo span { color: var(--pink); }
+
+.nav-links {
+  display: flex;
+  gap: 26px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'JetBrains Mono', monospace;
+  text-decoration: none;
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color .2s;
+}
+
+.nav-links a:hover { color: var(--mint); }
+
+section { position: relative; z-index: 1; }
+
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 130px 44px 60px;
+  gap: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-left { flex: 1.3; }
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.badge-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+
+.badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .65rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badge.live {
+  background: rgba(0,231,160,.14);
+  color: var(--mint);
+  border: 1px solid rgba(0,231,160,.4);
+}
+
+.badge.open {
+  background: rgba(255,204,51,.14);
+  color: var(--amber);
+  border: 1px solid rgba(255,204,51,.4);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: blink 1.4s infinite;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: .25; }
+}
+
+.hero-name {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(3rem, 6.4vw, 5.6rem);
+  line-height: .98;
+  margin-bottom: 20px;
+}
+
+.grad {
+  background: linear-gradient(90deg, var(--pink), var(--blue) 55%, var(--mint));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-role {
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.hero-role b { color: var(--ink); }
+
+.hero-desc {
+  font-size: .95rem;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 520px;
+  margin-bottom: 36px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-hot, .btn-outline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 24px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: .2s;
+}
+
+.btn-hot {
+  background: var(--pink);
+  color: var(--bg);
+}
+
+.btn-hot:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255,59,127,.35);
+}
+
+.btn-outline {
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.btn-outline:hover {
+  border-color: var(--mint);
+  color: var(--mint);
+  transform: translateY(-3px);
+}
+
+/* Radar */
+
+.radar {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  position: relative;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radar::before, .radar::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+}
+
+.radar::before { width: 66%; height: 66%; }
+.radar::after { width: 33%; height: 33%; }
+
+.radar-sweep {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(0,231,160,.55), transparent 26%);
+  animation: spin 4s linear infinite;
+  mask: radial-gradient(circle, transparent 0%, black 100%);
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.radar-core {
+  position: relative;
+  z-index: 2;
+  font-family: 'JetBrains Mono', monospace;
+  text-align: center;
+  background: var(--bg);
+  padding: 14px;
+  border-radius: 50%;
+  width: 108px;
+  height: 108px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--mint);
+}
+
+.radar-core .n {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--mint);
+}
+
+.radar-core .l {
+  font-size: .5rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+.radar-blip {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--pink);
+  box-shadow: 0 0 12px var(--pink);
+}
+
+/* Ticker */
+
+.ticker-wrap {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+  background: var(--panel);
+}
+
+.ticker-track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.ticker-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Section headers */
+
+.section-header {
+  padding: 90px 44px 44px;
+}
+
+.sec-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.section-title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(2rem, 4.4vw, 3.4rem);
+  line-height: 1.1;
+}
+
+/* Stats */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 16px;
+  padding: 0 44px 80px;
+}
+
+.stat-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 26px;
+  position: relative;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.stat-card.c1::before { background: var(--pink); }
+.stat-card.c2::before { background: var(--mint); }
+.stat-card.c3::before { background: var(--amber); }
+.stat-card.c4::before { background: var(--blue); }
+
+.stat-card.c1 .stat-num { color: var(--pink); }
+.stat-card.c2 .stat-num { color: var(--mint); }
+.stat-card.c3 .stat-num { color: var(--amber); }
+.stat-card.c4 .stat-num { color: var(--blue); }
+
+.stat-num {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+/* Skills */
+
+.bento {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 16px;
+  padding: 0 44px 90px;
+}
+
+.bento-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 26px;
+  transition: .2s;
+}
+
+.bento-card:hover { transform: translateY(-4px); }
+.bento-card.p1:hover { border-color: var(--pink); }
+.bento-card.p2:hover { border-color: var(--mint); }
+.bento-card.p3:hover { border-color: var(--amber); }
+.bento-card.p4:hover { border-color: var(--blue); }
+
+.bento-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.bento-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .66rem;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: var(--panel2);
+  color: var(--muted);
+  border: 1px solid var(--line);
+}
+
+/* Projects */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  padding: 0 44px 90px;
+}
+
+.mission-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: .2s;
+}
+
+.mission-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--pink);
+}
+
+.mission-card.wide { grid-column: 1 / -1; }
+
+.m-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.m-id {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem;
+  color: var(--muted);
+  letter-spacing: .06em;
+}
+
+.status-chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .6rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.status-chip.live {
+  background: rgba(0,231,160,.14);
+  color: var(--mint);
+}
+
+.status-chip.proto {
+  background: rgba(255,204,51,.14);
+  color: var(--amber);
+}
+
+.m-name {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.m-desc {
+  font-size: .86rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.m-metrics {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.metric {
+  background: var(--panel2);
+  border-radius: 10px;
+  padding: 10px 14px;
+  min-width: 96px;
+}
+
+.metric .v {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.05rem;
+}
+
+.metric .l {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .58rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-top: 3px;
+}
+
+.m-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .74rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: .2s;
+}
+
+.m-link:hover {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: var(--bg);
+}
+
+.tech-line {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .66rem;
+  line-height: 1.8;
+  color: var(--mint);
+  margin-bottom: 18px;
+}
+
+/* Experience */
+
+.timeline {
+  padding: 0 44px 90px;
+  display: flex;
+  flex-direction: column;
+}
+
+.t-entry {
+  display: grid;
+  grid-template-columns: 140px 24px 1fr;
+  gap: 4px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.t-entry:last-child { border-bottom: none; }
+
+.t-time {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .72rem;
+  color: var(--muted);
+  padding-top: 4px;
+}
+
+.t-dot-col {
+  display: flex;
+  justify-content: center;
+}
+
+.t-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 6px;
+}
+
+.t-role {
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
+
+.t-company {
+  font-size: .82rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.t-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.t-points li {
+  font-size: .82rem;
+  color: var(--muted);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.7;
+}
+
+.t-points li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+}
+
+/* Contact */
+
+#contact {
+  padding: 100px 44px;
+  text-align: center;
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+}
+
+.contact-title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(2.4rem,6vw,4.6rem);
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.contact-sub {
+  color: var(--muted);
+  margin-bottom: 40px;
+  font-size: .95rem;
+}
+
+.contact-links {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 22px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .78rem;
+  transition: .2s;
+}
+
+.contact-item:hover {
+  border-color: var(--pink);
+  background: rgba(255,59,127,.08);
+}
+
+footer {
+  padding: 24px 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .66rem;
+  color: var(--muted);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  nav { padding: 16px 20px; }
+  .nav-links { display: none; }
+
   #hero {
-    position: relative; z-index: 1;
-    min-height: 100vh;
-    display: flex; align-items: center;
-    padding: 130px 44px 60px;
-    gap: 60px;
-  }
-  .hero-left { flex: 1.3; }
-  .hero-right {
-    flex: 1; display: flex; align-items: center; justify-content: center;
-    position: relative;
+    flex-direction: column;
+    padding: 110px 20px 50px;
+    text-align: left;
   }
 
-  .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 26px; }
-  .badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 6px 12px; border-radius: 20px;
-    display: inline-flex; align-items: center; gap: 6px;
-  }
-  .badge.live { background: rgba(0,231,160,0.14); color: var(--mint); border: 1px solid rgba(0,231,160,0.4); }
-  .badge.open { background: rgba(255,204,51,0.14); color: var(--amber); border: 1px solid rgba(255,204,51,0.4); }
-  .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; animation: blink 1.4s infinite; }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
+  .hero-right { margin-top: 20px; }
+  .radar { width: 220px; height: 220px; }
 
-  .hero-name {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: clamp(3rem, 6.4vw, 5.6rem);
-    line-height: 0.98;
-    margin-bottom: 20px;
-  }
-  .hero-name .grad {
-    background: linear-gradient(90deg, var(--pink), var(--blue) 55%, var(--mint));
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
+  .section-header { padding: 60px 20px 32px; }
 
-  .hero-role {
-    font-size: 1.15rem; color: var(--muted); margin-bottom: 22px; font-weight: 500;
-  }
-  .hero-role b { color: var(--ink); }
-
-  .hero-desc { font-size: 0.95rem; line-height: 1.75; color: var(--muted); max-width: 500px; margin-bottom: 36px; }
-
-  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
-  .btn-hot, .btn-outline {
-    font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 600;
-    letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none;
-    padding: 15px 26px; border-radius: 6px; display: inline-flex; align-items: center; gap: 8px;
-    transition: transform 0.15s, box-shadow 0.2s;
-  }
-  .btn-hot { background: var(--pink); color: #0A0A14; box-shadow: 0 0 0 rgba(255,59,127,0); }
-  .btn-hot:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(255,59,127,0.35); }
-  .btn-outline { border: 1px solid var(--line); color: var(--ink); }
-  .btn-outline:hover { border-color: var(--mint); color: var(--mint); transform: translateY(-3px); }
-
-  /* radar */
-  .radar {
-    width: 320px; height: 320px; border-radius: 50%;
-    position: relative;
-    border: 1px solid var(--line);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .radar::before, .radar::after {
-    content: ''; position: absolute; border-radius: 50%; border: 1px solid var(--line);
-  }
-  .radar::before { width: 66%; height: 66%; }
-  .radar::after { width: 33%; height: 33%; }
-  .radar-sweep {
-    position: absolute; inset: 0; border-radius: 50%;
-    background: conic-gradient(from 0deg, rgba(0,231,160,0.55), transparent 26%);
-    animation: spin 4s linear infinite;
-    mask: radial-gradient(circle, transparent 0%, black 100%);
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .radar-core {
-    position: relative; z-index: 2;
-    font-family: 'JetBrains Mono', monospace; text-align: center;
-    background: var(--bg); padding: 14px 18px; border-radius: 50%;
-    width: 108px; height: 108px; display: flex; flex-direction: column; align-items: center; justify-content: center;
-    border: 1px solid var(--mint);
-  }
-  .radar-core .n { font-size: 1.4rem; font-weight: 700; color: var(--mint); }
-  .radar-core .l { font-size: 0.5rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 2px; }
-  .radar-blip { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 12px var(--pink); }
-
-  /* ─── TICKER ──────────────────────── */
-  .ticker-wrap {
-    position: relative; z-index: 1;
-    overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-    padding: 12px 0; background: var(--panel);
-  }
-  .ticker-track { display: flex; gap: 40px; width: max-content; animation: marquee 24s linear infinite; }
-  .ticker-item {
-    font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;
-    display: flex; align-items: center; gap: 14px;
-  }
-  @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-
-  /* ─── SECTION HEADER ──────────────── */
-  section { position: relative; z-index: 1; }
-  .section-header { padding: 90px 44px 44px; }
-  .sec-tag {
-    font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.14em;
-    text-transform: uppercase; margin-bottom: 14px; display: inline-block;
-    padding: 5px 12px; border-radius: 20px;
-  }
-  .section-title {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: clamp(2rem, 4.4vw, 3.4rem); line-height: 1;
-  }
-
-  /* ─── STATS ───────────────────────── */
   .stats-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
-    padding: 0 44px 80px;
+    grid-template-columns: repeat(2,1fr);
+    padding: 0 20px 60px;
   }
-  .stat-card {
-    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
-    padding: 26px; position: relative; overflow: hidden;
-  }
-  .stat-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  }
-  .stat-card.c1::before { background: var(--pink); } .stat-card.c1 .stat-num { color: var(--pink); }
-  .stat-card.c2::before { background: var(--mint); } .stat-card.c2 .stat-num { color: var(--mint); }
-  .stat-card.c3::before { background: var(--amber); } .stat-card.c3 .stat-num { color: var(--amber); }
-  .stat-card.c4::before { background: var(--blue); } .stat-card.c4 .stat-num { color: var(--blue); }
-  .stat-num { font-family: 'Archivo Black', sans-serif; font-size: 2.1rem; margin-bottom: 6px; }
-  .stat-label { font-size: 0.78rem; color: var(--muted); }
 
-  /* ─── SKILLS BENTO ────────────────── */
   .bento {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 0 44px 90px;
-  }
-  .bento-card {
-    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
-    padding: 26px; transition: border-color 0.2s, transform 0.2s;
-  }
-  .bento-card:hover { transform: translateY(-4px); }
-  .bento-card.p1:hover { border-color: var(--pink); }
-  .bento-card.p2:hover { border-color: var(--mint); }
-  .bento-card.p3:hover { border-color: var(--amber); }
-  .bento-card.p4:hover { border-color: var(--blue); }
-  .bento-title { font-weight: 700; font-size: 1.1rem; margin-bottom: 16px; }
-  .bento-tags { display: flex; flex-wrap: wrap; gap: 7px; }
-  .chip {
-    font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; padding: 5px 10px;
-    border-radius: 20px; background: var(--panel2); color: var(--muted); border: 1px solid var(--line);
+    grid-template-columns: 1fr 1fr;
+    padding: 0 20px 60px;
   }
 
-  /* ─── PROJECT CARDS ───────────────── */
-  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 0 44px 90px; }
-  .mission-card {
-    background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
-    padding: 30px; position: relative; overflow: hidden; transition: transform 0.2s, border-color 0.2s;
+  .projects-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px 60px;
   }
-  .mission-card:hover { transform: translateY(-4px); border-color: var(--pink); }
-  .mission-card.wide { grid-column: 1 / -1; }
-  .m-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
-  .m-id { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.06em; }
-  .status-chip {
-    font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 4px 10px; border-radius: 20px;
-  }
-  .status-chip.live { background: rgba(0,231,160,0.14); color: var(--mint); }
-  .status-chip.proto { background: rgba(255,204,51,0.14); color: var(--amber); }
 
-  .m-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.5rem; margin-bottom: 12px; }
-  .m-desc { font-size: 0.86rem; line-height: 1.7; color: var(--muted); margin-bottom: 20px; }
+  .mission-card.wide { grid-column: auto; }
 
-  .m-metrics { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
-  .metric {
-    background: var(--panel2); border-radius: 10px; padding: 10px 14px; min-width: 96px;
-  }
-  .metric .v { font-family: 'Archivo Black', sans-serif; font-size: 1.15rem; }
-  .metric .l { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .timeline { padding: 0 20px 60px; }
 
-  .m-link {
-    display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
-    font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; letter-spacing: 0.04em; text-transform: uppercase;
-    color: var(--ink); border: 1px solid var(--line); padding: 10px 18px; border-radius: 8px;
-    transition: all 0.2s;
-  }
-  .m-link:hover { background: var(--pink); border-color: var(--pink); color: #0A0A14; }
+  .t-entry { grid-template-columns: 24px 1fr; }
 
-  /* ─── EXPERIENCE ──────────────────── */
-  .timeline { padding: 0 44px 90px; display: flex; flex-direction: column; gap: 0; }
-  .t-entry {
-    display: grid; grid-template-columns: 140px 24px 1fr; gap: 4px;
-    padding: 28px 0; border-bottom: 1px solid var(--line);
+  .t-time {
+    grid-column: 1 / -1;
+    padding-top: 0;
+    margin-bottom: 6px;
   }
-  .t-entry:last-child { border-bottom: none; }
-  .t-time { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--muted); padding-top: 4px; }
-  .t-dot-col { display: flex; justify-content: center; }
-  .t-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 6px; }
-  .t-role { font-weight: 700; font-size: 1.15rem; margin-bottom: 4px; }
-  .t-company { font-size: 0.82rem; color: var(--muted); margin-bottom: 12px; }
-  .t-points { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-  .t-points li { font-size: 0.82rem; color: var(--muted); padding-left: 16px; position: relative; line-height: 1.6; }
-  .t-points li::before { content: '▸'; position: absolute; left: 0; }
 
-  /* ─── CONTACT ─────────────────────── */
-  #contact {
-    padding: 100px 44px; text-align: center;
-    background: var(--panel);
-    border-top: 1px solid var(--line);
-  }
-  .contact-title {
-    font-family: 'Archivo Black', sans-serif; font-size: clamp(2.4rem, 6vw, 4.6rem); line-height: 1;
-    margin-bottom: 18px;
-  }
-  .contact-title .grad { background: linear-gradient(90deg, var(--pink), var(--blue), var(--mint)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .contact-sub { color: var(--muted); margin-bottom: 40px; font-size: 0.95rem; }
-  .contact-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-  .contact-item {
-    display: flex; align-items: center; gap: 9px; padding: 14px 22px; border-radius: 10px;
-    border: 1px solid var(--line); text-decoration: none; color: var(--ink);
-    font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; transition: all 0.2s;
-  }
-  .contact-item:hover { border-color: var(--pink); background: rgba(255,59,127,0.08); }
+  #contact { padding: 70px 20px; }
 
   footer {
-    padding: 24px 44px; display: flex; justify-content: space-between; align-items: center;
-    font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; color: var(--muted);
+    padding: 20px;
+    flex-direction: column;
+    gap: 10px;
   }
+}
 
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  @media (max-width: 900px) {
-    nav { padding: 16px 20px; }
-    .nav-links { display: none; }
-    #hero { flex-direction: column; padding: 110px 20px 50px; text-align: left; }
-    .hero-right { margin-top: 20px; }
-    .radar { width: 220px; height: 220px; }
-    .section-header { padding: 60px 20px 32px; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); padding: 0 20px 60px; }
-    .bento { grid-template-columns: 1fr; padding: 0 20px 60px; }
-    .projects-grid { grid-template-columns: 1fr; padding: 0 20px 60px; }
-    .timeline { padding: 0 20px 60px; }
-    .t-entry { grid-template-columns: 24px 1fr; }
-    .t-time { grid-column: 1 / -1; padding-top: 0; margin-bottom: 6px; }
-    #contact { padding: 70px 20px; }
-    footer { padding: 20px; flex-direction: column; gap: 10px; }
-  }
+@media (max-width: 520px) {
+  .bento { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .stat-card { padding: 18px; }
+  .stat-num { font-size: 1.5rem; }
+  .mission-card { padding: 22px; }
+  .m-top { flex-direction: column; }
+  .hero-name { font-size: 3.3rem; }
+  .btn-hot, .btn-outline { padding: 13px 16px; }
+}
 </style>
 </head>
+
 <body>
+
+<!-- NAVIGATION -->
 
 <nav>
   <div class="nav-logo">AHDAB<span>.</span>OS</div>
+
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -332,244 +804,784 @@
   </ul>
 </nav>
 
+<!-- HERO -->
+
 <section id="hero">
+
   <div class="hero-left">
+
     <div class="badge-row">
-      <span class="badge live"><span class="dot"></span>ACTIVELY SHIPPING</span>
-      <span class="badge open"><span class="dot"></span>OPEN TO ROLES</span>
+      <span class="badge live">
+        <span class="dot"></span>
+        BUILDING & LEARNING
+      </span>
+
+      <span class="badge open">
+        <span class="dot"></span>
+        OPEN TO OPPORTUNITIES
+      </span>
     </div>
-    <h1 class="hero-name">AHDAB<br><span class="grad">OSAMA</span></h1>
-    <p class="hero-role">AI/ML Engineer building <b>systems that detect, decide, and respond</b> — in real time.</p>
-    <p class="hero-desc">
-      Crash detection on a moving phone. Semantic search across languages. Spam gone in
-      milliseconds. I build the layer between raw signal and the right action.
+
+    <h1 class="hero-name">
+      AHDAB<br>
+      <span class="grad">OSAMA</span>
+    </h1>
+
+    <p class="hero-role">
+      AI/ML & Backend Engineer building
+      <b>intelligent systems and scalable applications.</b>
     </p>
+
+    <p class="hero-desc">
+      From machine learning pipelines that analyze real-world sensor data
+      to multilingual RAG systems and structured .NET applications,
+      I enjoy turning complex problems into practical software solutions.
+    </p>
+
     <div class="hero-ctas">
-      <a href="#projects" class="btn-hot">See the builds →</a>
-      <a href="https://github.com/AhdabOsama" target="_blank" class="btn-outline">GitHub</a>
-      <a href="mailto:ahdab738@gmail.com" class="btn-outline">Email me</a>
+      <a href="#projects" class="btn-hot">Explore my projects →</a>
+
+      <a href="https://github.com/AHDABOSAMA"
+         target="_blank" rel="noopener noreferrer"
+         class="btn-outline">GitHub</a>
+
+      <a href="mailto:ahdab738@gmail.com" class="btn-outline">
+        Contact me
+      </a>
     </div>
+
   </div>
+
   <div class="hero-right">
     <div class="radar">
+
       <div class="radar-sweep"></div>
-      <div class="radar-blip" style="top: 30%; left: 68%;"></div>
-      <div class="radar-blip" style="top: 62%; left: 24%; background: var(--blue); box-shadow: 0 0 12px var(--blue);"></div>
-      <div class="radar-blip" style="top: 78%; left: 66%; background: var(--amber); box-shadow: 0 0 12px var(--amber);"></div>
-      <div class="radar-core">
-        <span class="n">5</span>
-        <span class="l">systems live</span>
+
+      <div class="radar-blip" style="top:30%;left:68%;"></div>
+
+      <div class="radar-blip"
+           style="top:62%;left:24%;background:var(--blue);box-shadow:0 0 12px var(--blue);">
       </div>
+
+      <div class="radar-blip"
+           style="top:78%;left:66%;background:var(--amber);box-shadow:0 0 12px var(--amber);">
+      </div>
+
+      <div class="radar-core">
+        <span class="n">AI + .NET</span>
+        <span class="l">Engineering</span>
+      </div>
+
     </div>
   </div>
+
 </section>
+
+<!-- TECH TICKER -->
 
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item" style="color:var(--pink)">● CRASH DETECTION — 97% ACC</span>
-    <span class="ticker-item" style="color:var(--mint)">● SPAM FILTER — 99% ACC</span>
-    <span class="ticker-item" style="color:var(--blue)">● CV MATCHER — AR/EN RAG</span>
-    <span class="ticker-item" style="color:var(--amber)">● SIGN LANGUAGE — 87K IMAGES</span>
-    <span class="ticker-item" style="color:var(--pink)">● CRASH DETECTION — 97% ACC</span>
-    <span class="ticker-item" style="color:var(--mint)">● SPAM FILTER — 99% ACC</span>
-    <span class="ticker-item" style="color:var(--blue)">● CV MATCHER — AR/EN RAG</span>
-    <span class="ticker-item" style="color:var(--amber)">● SIGN LANGUAGE — 87K IMAGES</span>
+
+    <span class="ticker-item" style="color:var(--pink)">
+      ● MACHINE LEARNING
+    </span>
+
+    <span class="ticker-item" style="color:var(--mint)">
+      ● ASP.NET CORE
+    </span>
+
+    <span class="ticker-item" style="color:var(--blue)">
+      ● RAG & VECTOR SEARCH
+    </span>
+
+    <span class="ticker-item" style="color:var(--amber)">
+      ● COMPUTER VISION
+    </span>
+
+    <span class="ticker-item" style="color:var(--pink)">
+      ● DEEP LEARNING
+    </span>
+
+    <span class="ticker-item" style="color:var(--mint)">
+      ● SQL SERVER & EF CORE
+    </span>
+
+    <span class="ticker-item" style="color:var(--blue)">
+      ● MACHINE LEARNING
+    </span>
+
+    <span class="ticker-item" style="color:var(--amber)">
+      ● BACKEND ENGINEERING
+    </span>
+
   </div>
 </div>
 
-<section id="skills">
+<!-- STATS -->
+
+<section id="overview">
+
   <div class="section-header reveal">
-    <span class="sec-tag" style="background:rgba(255,59,127,0.14); color:var(--pink);">Toolkit</span>
-    <h2 class="section-title">What I build with</h2>
+    <span class="sec-tag"
+          style="background:rgba(255,59,127,.14);color:var(--pink);">
+      Overview
+    </span>
+
+    <h2 class="section-title">My engineering journey</h2>
   </div>
+
+  <div class="stats-grid">
+
+    <div class="stat-card c1 reveal">
+      <div class="stat-num">AI/ML</div>
+      <div class="stat-label">Machine Learning & Intelligent Systems</div>
+    </div>
+
+    <div class="stat-card c2 reveal">
+      <div class="stat-num">RAG</div>
+      <div class="stat-label">Multilingual Retrieval & LLM Integration</div>
+    </div>
+
+    <div class="stat-card c3 reveal">
+      <div class="stat-num">.NET</div>
+      <div class="stat-label">Backend & Application Development</div>
+    </div>
+
+    <div class="stat-card c4 reveal">
+      <div class="stat-num">CS</div>
+      <div class="stat-label">Computer Science Graduate</div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+  <div class="section-header reveal">
+
+    <span class="sec-tag"
+          style="background:rgba(255,59,127,.14);color:var(--pink);">
+      Toolkit
+    </span>
+
+    <h2 class="section-title">What I build with</h2>
+
+  </div>
+
   <div class="bento">
+
+    <!-- Deep Learning -->
+
     <div class="bento-card p1 reveal">
-      <div class="bento-title">Deep Learning &amp; NLP</div>
+      <div class="bento-title">Deep Learning & NLP</div>
+
       <div class="bento-tags">
-        <span class="chip">TensorFlow</span><span class="chip">PyTorch</span><span class="chip">CNNs</span>
-        <span class="chip">Siamese Nets</span><span class="chip">NLP</span><span class="chip">RAG</span>
+        <span class="chip">Python</span>
+        <span class="chip">TensorFlow</span>
+        <span class="chip">PyTorch</span>
+        <span class="chip">Scikit-learn</span>
+        <span class="chip">CNN</span>
+        <span class="chip">GRU</span>
+        <span class="chip">NLP</span>
+        <span class="chip">RAG</span>
       </div>
     </div>
+
+    <!-- Computer Vision -->
+
     <div class="bento-card p2 reveal">
       <div class="bento-title">Computer Vision</div>
+
       <div class="bento-tags">
-        <span class="chip">OpenCV</span><span class="chip">Segmentation</span><span class="chip">Real-time CV</span>
+        <span class="chip">OpenCV</span>
+        <span class="chip">Image Processing</span>
+        <span class="chip">Segmentation</span>
+        <span class="chip">Object Detection</span>
+        <span class="chip">Real-time CV</span>
       </div>
     </div>
+
+    <!-- LLM -->
+
     <div class="bento-card p3 reveal">
-      <div class="bento-title">On-Device ML</div>
+      <div class="bento-title">LLM & Retrieval</div>
+
       <div class="bento-tags">
-        <span class="chip">TensorFlow Lite</span><span class="chip">Android</span><span class="chip">Firebase</span>
+        <span class="chip">OpenAI API</span>
+        <span class="chip">Gemini</span>
+        <span class="chip">Groq</span>
+        <span class="chip">Ollama</span>
+        <span class="chip">ChromaDB</span>
+        <span class="chip">Vector Search</span>
+        <span class="chip">Embeddings</span>
+        <span class="chip">FastAPI</span>
       </div>
     </div>
+
+    <!-- Backend .NET -->
+
     <div class="bento-card p4 reveal">
-      <div class="bento-title">LLM &amp; Retrieval</div>
+      <div class="bento-title">Backend & .NET Development</div>
+
       <div class="bento-tags">
-        <span class="chip">OpenAI API</span><span class="chip">Gemini</span><span class="chip">Ollama</span><span class="chip">ChromaDB</span>
+        <span class="chip">C#</span>
+        <span class="chip">ASP.NET Core MVC</span>
+        <span class="chip">REST APIs</span>
+        <span class="chip">Entity Framework Core</span>
+        <span class="chip">Dapper</span>
+        <span class="chip">LINQ</span>
+        <span class="chip">AutoMapper</span>
+        <span class="chip">JWT</span>
+        <span class="chip">Redis</span>
       </div>
     </div>
+
+    <!-- Architecture -->
+
     <div class="bento-card p1 reveal">
-      <div class="bento-title">Backend</div>
+      <div class="bento-title">Software Architecture</div>
+
       <div class="bento-tags">
-        <span class="chip">FastAPI</span><span class="chip">ASP.NET Core</span><span class="chip">JWT</span>
-        <span class="chip">EF Core</span><span class="chip">Redis</span>
+        <span class="chip">OOP</span>
+        <span class="chip">SOLID</span>
+        <span class="chip">Clean Architecture</span>
+        <span class="chip">Layered Architecture</span>
+        <span class="chip">Repository Pattern</span>
+        <span class="chip">Unit of Work</span>
+        <span class="chip">Dependency Injection</span>
+        <span class="chip">Design Patterns</span>
       </div>
     </div>
+
+    <!-- Languages and tools -->
+
     <div class="bento-card p2 reveal">
-      <div class="bento-title">Languages &amp; Infra</div>
+      <div class="bento-title">Languages, Databases & Tools</div>
+
       <div class="bento-tags">
-        <span class="chip">Python</span><span class="chip">Java</span><span class="chip">C#</span>
-        <span class="chip">SQL</span><span class="chip">Docker</span>
+        <span class="chip">Python</span>
+        <span class="chip">C#</span>
+        <span class="chip">Java</span>
+        <span class="chip">SQL</span>
+        <span class="chip">SQL Server</span>
+        <span class="chip">MySQL</span>
+        <span class="chip">Git</span>
+        <span class="chip">GitHub</span>
+        <span class="chip">Docker</span>
+        <span class="chip">Data Structures</span>
+        <span class="chip">Algorithms</span>
       </div>
     </div>
+
+    <!-- On-device ML -->
+
+    <div class="bento-card p3 reveal">
+      <div class="bento-title">On-Device ML & Mobile</div>
+
+      <div class="bento-tags">
+        <span class="chip">TensorFlow Lite</span>
+        <span class="chip">Android</span>
+        <span class="chip">Firebase</span>
+        <span class="chip">Sensor Data</span>
+        <span class="chip">Model Deployment</span>
+      </div>
+    </div>
+
   </div>
+
 </section>
+
+<!-- PROJECTS -->
 
 <section id="projects">
+
   <div class="section-header reveal">
-    <span class="sec-tag" style="background:rgba(0,231,160,0.14); color:var(--mint);">Builds</span>
+
+    <span class="sec-tag"
+          style="background:rgba(0,231,160,.14);color:var(--mint);">
+      Builds
+    </span>
+
     <h2 class="section-title">Selected projects</h2>
+
   </div>
+
   <div class="projects-grid">
 
+    <!-- SAFETRAQ -->
+
     <div class="mission-card wide reveal">
+
       <div class="m-top">
         <span class="m-id">MISSION-05 · SAFETRAQ</span>
-        <span class="status-chip live">Deployed · Grad Project</span>
+        <span class="status-chip live">Research & ML Pipeline</span>
       </div>
-      <div class="m-name">Crash Detection App</div>
+
+      <div class="m-name">SafeTraq — Crash Detection ML Pipeline</div>
+
       <p class="m-desc">
-        Android app that turns a phone into a driving-safety companion — on-device TFLite
-        inference confirms a crash from accelerometer, gyroscope and GPS data, then fires a
-        10-second countdown before auto-sending an SOS SMS with live location.
+        Developed the machine learning pipeline for SafeTraq, a smartphone-sensor-based
+        vehicle crash detection system. The project covers sensor data preprocessing,
+        time-series windowing, leakage-safe dataset splitting, model comparison,
+        and evaluation on real driving sessions.
+
+        A key focus was investigating the gap between simulated test performance
+        and real-world driving behavior, especially false alarms caused by
+        road conditions such as speed bumps and potholes.
       </p>
-      <div class="m-metrics">
-        <div class="metric"><div class="v" style="color:var(--pink)">~97%</div><div class="l">Accuracy</div></div>
-        <div class="metric"><div class="v" style="color:var(--mint)">CNN+GRU</div><div class="l">Architecture</div></div>
-        <div class="metric"><div class="v" style="color:var(--amber)">0.95</div><div class="l">Confidence Gate</div></div>
-        <div class="metric"><div class="v" style="color:var(--blue)">10s</div><div class="l">SOS Countdown</div></div>
+
+      <div class="tech-line">
+        PYTHON · TENSORFLOW · CNN · GRU · PANDAS · SCIKIT-LEARN · TIME-SERIES ML
       </div>
-      <a href="https://github.com/AHDABOSAMA/Crash_Detection_App" target="_blank" class="m-link">Open repo →</a>
+
+      <div class="m-metrics">
+
+        <div class="metric">
+          <div class="v" style="color:var(--pink)">78.3%</div>
+          <div class="l">CNN+GRU Test Accuracy</div>
+        </div>
+
+        <div class="metric">
+          <div class="v" style="color:var(--mint)">9,217</div>
+          <div class="l">Real Driving Windows</div>
+        </div>
+
+        <div class="metric">
+          <div class="v" style="color:var(--amber)">5.4%</div>
+          <div class="l">False Alarm Rate</div>
+        </div>
+
+        <div class="metric">
+          <div class="v" style="color:var(--blue)">25</div>
+          <div class="l">Automated Tests</div>
+        </div>
+
+      </div>
+
+      <p class="m-desc">
+        <strong>My contribution:</strong>
+        Machine learning development, sensor-data preprocessing,
+        model experimentation, and real-driving evaluation.
+        The Android application and website were developed by teammates.
+      </p>
+
+      <a href="https://github.com/AHDABOSAMA/safetraq-ml-pipeline"
+         target="_blank" rel="noopener noreferrer"
+         class="m-link">
+        Explore ML repository →
+      </a>
+
     </div>
 
-    <div class="mission-card reveal">
-      <div class="m-top"><span class="m-id">MISSION-01</span><span class="status-chip live">Deployed</span></div>
-      <div class="m-name">Smart CV Matcher</div>
-      <p class="m-desc">Multilingual RAG engine matching CVs to jobs across Arabic and English via FastAPI, ChromaDB, and swappable LLM providers.</p>
-      <div class="m-metrics">
-        <div class="metric"><div class="v" style="color:var(--pink)">AR/EN</div><div class="l">Languages</div></div>
-        <div class="metric"><div class="v" style="color:var(--mint)">3</div><div class="l">Model Providers</div></div>
-      </div>
-      <a href="https://github.com/AHDABOSAMA/Smart-CV-Matcher.git" target="_blank" class="m-link">Open repo →</a>
-    </div>
+    <!-- SMART CV MATCHER -->
 
     <div class="mission-card reveal">
-      <div class="m-top"><span class="m-id">MISSION-04</span><span class="status-chip live">Deployed</span></div>
+
+      <div class="m-top">
+        <span class="m-id">MISSION-01</span>
+        <span class="status-chip live">RAG Application</span>
+      </div>
+
+      <div class="m-name"> Smart-CV-Matcher</div>
+
+      <p class="m-desc">
+        Built a multilingual Retrieval-Augmented Generation system
+        that matches candidate CVs with job descriptions in both
+        Arabic and English.
+
+        Combines document processing, Arabic text normalization,
+        semantic embeddings, vector search, and configurable LLM providers.
+      </p>
+
+      <div class="tech-line">
+        PYTHON · FASTAPI · CHROMADB · RAG · GEMINI · OLLAMA
+      </div>
+
+      <div class="m-metrics">
+
+        <div class="metric">
+          <div class="v" style="color:var(--pink)">AR/EN</div>
+          <div class="l">Languages</div>
+        </div>
+
+        <div class="metric">
+          <div class="v" style="color:var(--mint)">RAG</div>
+          <div class="l">Architecture</div>
+        </div>
+
+        <div class="metric">
+          <div class="v" style="color:var(--blue)">3</div>
+          <div class="l">LLM Options</div>
+        </div>
+
+      </div>
+
+      <a href="https://github.com/AHDABOSAMA/Smart-CV-Matcher"
+         target="_blank" rel="noopener noreferrer"
+         class="m-link">
+        Open repository →
+      </a>
+
+    </div>
+
+    <!-- GYM MANAGEMENT -->
+
+    <div class="mission-card reveal">
+
+      <div class="m-top">
+        <span class="m-id">MISSION-06</span>
+        <span class="status-chip live">Backend Development</span>
+      </div>
+
+      <div class="m-name">Gym Management System</div>
+
+      <p class="m-desc">
+        Developed a database-driven web application for managing gym operations,
+        including members, trainers, membership plans, and training sessions.
+
+        Focused on maintainable backend design, separation of concerns,
+        business logic, database operations, and reusable application services.
+      </p>
+
+      <div class="tech-line">
+        C# · ASP.NET CORE MVC · EF CORE · SQL SERVER · AUTOMAPPER
+      </div>
+
+      <div class="m-metrics">
+
+        <div class="metric">
+          <div class="v" style="color:var(--pink)">3-Tier</div>
+          <div class="l">Architecture</div>
+        </div>
+
+        <div class="metric">
+          <div class="v" style="color:var(--mint)">EF Core</div>
+          <div class="l">ORM</div>
+        </div>
+
+        <div class="metric">
+          <div class="v" style="color:var(--blue)">C#</div>
+          <div class="l">Backend</div>
+        </div>
+
+      </div>
+
+      <p class="m-desc">
+        <strong>Key concepts:</strong>
+        Repository Pattern, Unit of Work, Dependency Injection,
+        AutoMapper, ViewModels, and Entity Framework Core migrations.
+      </p>
+
+      <a href="https://github.com/AHDABOSAMA/GymManagementSystem"
+         target="_blank" rel="noopener noreferrer"
+         class="m-link">
+        Open repository →
+      </a>
+
+    </div>
+
+    <!-- SPAM DETECTION -->
+
+    <div class="mission-card reveal">
+
+      <div class="m-top">
+        <span class="m-id">MISSION-02</span>
+        <span class="status-chip live">Machine Learning</span>
+      </div>
+
       <div class="m-name">Spam Email Detection</div>
-      <p class="m-desc">Ensemble of SVM, Random Forest, and Logistic Regression for fast, high-accuracy inbox filtering.</p>
-      <div class="m-metrics">
-        <div class="metric"><div class="v" style="color:var(--amber)">99%</div><div class="l">Accuracy</div></div>
-        <div class="metric"><div class="v" style="color:var(--blue)">3-way</div><div class="l">Ensemble</div></div>
+
+      <p class="m-desc">
+        Developed an email classification system using an ensemble
+        of machine learning algorithms, combining SVM, Random Forest,
+        and Logistic Regression for spam detection.
+      </p>
+
+      <div class="tech-line">
+        PYTHON · SCIKIT-LEARN · NLP · SVM · RANDOM FOREST
       </div>
-      <a href="https://github.com/AHDABOSAMA/Spam-Email-Detection.git" target="_blank" class="m-link">Open repo →</a>
+
+      <div class="m-metrics">
+
+        <div class="metric">
+          <div class="v" style="color:var(--amber)">99%</div>
+          <div class="l">Reported Accuracy</div>
+        </div>
+
+        <div class="metric">
+          <div class="v" style="color:var(--blue)">3-way</div>
+          <div class="l">Ensemble</div>
+        </div>
+
+      </div>
+
+      <a href="https://github.com/AHDABOSAMA/Spam-Email-Detection"
+         target="_blank" rel="noopener noreferrer"
+         class="m-link">
+        Open repository →
+      </a>
+
     </div>
 
+    <!-- SIGN LANGUAGE -->
+
     <div class="mission-card reveal">
-      <div class="m-top"><span class="m-id">MISSION-03</span><span class="status-chip live">Deployed</span></div>
+
+      <div class="m-top">
+        <span class="m-id">MISSION-03</span>
+        <span class="status-chip live">Computer Vision</span>
+      </div>
+
       <div class="m-name">Sign Language Recognition</div>
-      <p class="m-desc">Real-time gesture recognition trained on 87K+ images to bridge communication for the deaf and hard-of-hearing.</p>
-      <div class="m-metrics">
-        <div class="metric"><div class="v" style="color:var(--pink)">87K+</div><div class="l">Images</div></div>
-        <div class="metric"><div class="v" style="color:var(--mint)">Real-time</div><div class="l">Inference</div></div>
+
+      <p class="m-desc">
+        Developed a computer vision solution for recognizing sign
+        language gestures using image-based deep learning models,
+        aiming to improve communication accessibility.
+      </p>
+
+      <div class="tech-line">
+        PYTHON · TENSORFLOW · CNN · OPENCV
       </div>
-      <a href="https://github.com/AHDABOSAMA/sign-language-recognition.git" target="_blank" class="m-link">Open repo →</a>
+
+      <div class="m-metrics">
+
+        <div class="metric">
+          <div class="v" style="color:var(--pink)">87K+</div>
+          <div class="l">Images</div>
+        </div>
+
+        <div class="metric">
+          <div class="v" style="color:var(--mint)">CV</div>
+          <div class="l">Application</div>
+        </div>
+
+      </div>
+
+      <a href="https://github.com/AHDABOSAMA/sign-language-recognition"
+         target="_blank" rel="noopener noreferrer"
+         class="m-link">
+        Open repository →
+      </a>
+
     </div>
 
+    <!-- FOOD ANALYSIS -->
+
     <div class="mission-card reveal">
-      <div class="m-top"><span class="m-id">MISSION-02</span><span class="status-chip proto">Prototype</span></div>
-      <div class="m-name">Food &amp; Fruit Analysis</div>
-      <p class="m-desc">CNN classification with segmentation, plus Siamese networks for similarity-based food recognition.</p>
-      <div class="m-metrics">
-        <div class="metric"><div class="v" style="color:var(--amber)">CNN</div><div class="l">Architecture</div></div>
-        <div class="metric"><div class="v" style="color:var(--blue)">Siamese</div><div class="l">Matching</div></div>
+
+      <div class="m-top">
+        <span class="m-id">MISSION-04</span>
+        <span class="status-chip proto">Prototype</span>
       </div>
-      <a href="https://github.com/AHDABOSAMA/Food-Fruit-Analysis-System.git" target="_blank" class="m-link">Open repo →</a>
+
+      <div class="m-name">Food & Fruit Analysis</div>
+
+      <p class="m-desc">
+        Developed an image-based food recognition solution using
+        CNN classification, image segmentation, and Siamese
+        neural networks for similarity-based recognition.
+      </p>
+
+      <div class="tech-line">
+        PYTHON · CNN · SIAMESE NETWORKS · COMPUTER VISION
+      </div>
+
+      <div class="m-metrics">
+
+        <div class="metric">
+          <div class="v" style="color:var(--amber)">CNN</div>
+          <div class="l">Classification</div>
+        </div>
+
+        <div class="metric">
+          <div class="v" style="color:var(--blue)">Siamese</div>
+          <div class="l">Similarity</div>
+        </div>
+
+      </div>
+
+      <a href="https://github.com/AHDABOSAMA/Food-Fruit-Analysis-System"
+         target="_blank" rel="noopener noreferrer"
+         class="m-link">
+        Open repository →
+      </a>
+
     </div>
 
   </div>
+
 </section>
+
+<!-- EXPERIENCE -->
 
 <section id="experience">
+
   <div class="section-header reveal">
-    <span class="sec-tag" style="background:rgba(91,140,255,0.14); color:var(--blue);">Track record</span>
-    <h2 class="section-title">Experience</h2>
+
+    <span class="sec-tag"
+          style="background:rgba(91,140,255,.14);color:var(--blue);">
+      Track record
+    </span>
+
+    <h2 class="section-title">Experience & Education</h2>
+
   </div>
+
   <div class="timeline">
+
+    <!-- ROUTE -->
+
     <div class="t-entry reveal">
+
       <div class="t-time">APR–NOV 2025</div>
-      <div class="t-dot-col"><div class="t-dot" style="background:var(--pink)"></div></div>
+
+      <div class="t-dot-col">
+        <div class="t-dot" style="background:var(--pink)"></div>
+      </div>
+
       <div>
+
         <div class="t-role">Back-End Development Trainee (.NET)</div>
+
         <div class="t-company">Route · Giza, Egypt</div>
+
         <ul class="t-points">
-          <li>Built secure ASP.NET Core REST APIs with JWT auth and role-based authorization.</li>
-          <li>Applied architecture and design patterns across scalable backend services.</li>
-          <li>Improved performance using EF Core, Dapper, and Redis caching.</li>
+          <li>Developed ASP.NET Core REST APIs with JWT authentication and role-based authorization.</li>
+          <li>Applied Clean Architecture principles, SOLID, and design patterns.</li>
+          <li>Worked with Entity Framework Core and Dapper for data access.</li>
+          <li>Used Redis caching and explored database query optimization.</li>
         </ul>
+
       </div>
+
     </div>
+
+    <!-- A2SV -->
+
     <div class="t-entry reveal">
+
       <div class="t-time">JUN 2024–2025</div>
-      <div class="t-dot-col"><div class="t-dot" style="background:var(--mint)"></div></div>
+
+      <div class="t-dot-col">
+        <div class="t-dot" style="background:var(--mint)"></div>
+      </div>
+
       <div>
+
         <div class="t-role">Software Engineering Trainee</div>
+
         <div class="t-company">A2SV (Africa to Silicon Valley) · Remote</div>
+
         <ul class="t-points">
-          <li>Collaborated remotely in Agile teams on scalable engineering solutions.</li>
-          <li>Solved advanced algorithmic problems using data structures and algorithms.</li>
-          <li>Strengthened fundamentals through competitive programming.</li>
+          <li>Collaborated remotely in a software engineering learning environment.</li>
+          <li>Solved 200+ Data Structures and Algorithms problems.</li>
+          <li>Strengthened problem-solving skills and software engineering fundamentals.</li>
         </ul>
+
       </div>
+
     </div>
+
+    <!-- EDUCATION -->
+
     <div class="t-entry reveal">
+
       <div class="t-time">2022–2026</div>
-      <div class="t-dot-col"><div class="t-dot" style="background:var(--amber)"></div></div>
-      <div>
-        <div class="t-role">B.Sc. Computer Science — Scientific Computing</div>
-        <div class="t-company">Ain Shams University · Cairo, Egypt</div>
-        <ul class="t-points">
-          <li>Graduation project: SafeTraq — AI-powered crash detection, ~97% accuracy.</li>
-          <li>Applied coursework through multiple production-style ML builds.</li>
-          <li>Expected graduation 2026.</li>
-        </ul>
+
+      <div class="t-dot-col">
+        <div class="t-dot" style="background:var(--amber)"></div>
       </div>
+
+      <div>
+
+        <div class="t-role">B.Sc. Computer Science — Scientific Computing</div>
+
+        <div class="t-company">Ain Shams University · Cairo, Egypt</div>
+
+        <ul class="t-points">
+          <li>Graduated with a Bachelor's degree in Computer Science.</li>
+          <li>Graduation project: SafeTraq — smartphone-sensor-based crash detection.</li>
+          <li>Applied machine learning, deep learning, and software engineering concepts through practical projects.</li>
+        </ul>
+
+      </div>
+
     </div>
+
   </div>
+
 </section>
 
+<!-- CONTACT -->
+
 <section id="contact">
-  <h2 class="contact-title">Let's build<br><span class="grad">something live.</span></h2>
-  <p class="contact-sub">Open to AI/ML engineering, backend, and research roles — full-time or internship.</p>
+
+  <h2 class="contact-title">
+    Let's build<br>
+    <span class="grad">something meaningful.</span>
+  </h2>
+
+  <p class="contact-sub">
+    Open to AI/ML Engineering, Backend Development,
+    and Software Engineering opportunities.
+  </p>
+
   <div class="contact-links">
-    <a href="mailto:ahdab738@gmail.com" class="contact-item">ahdab738@gmail.com</a>
-    <a href="https://github.com/AhdabOsama" target="_blank" class="contact-item">GitHub</a>
-    <a href="https://www.linkedin.com/in/ahdab-osama-ai/" target="_blank" class="contact-item">LinkedIn</a>
-    <a href="tel:+201025378966" class="contact-item">+20 102 537 8966</a>
+
+    <a href="mailto:ahdab738@gmail.com" class="contact-item">
+      Email
+    </a>
+
+    <a href="https://github.com/AHDABOSAMA"
+       target="_blank" rel="noopener noreferrer"
+       class="contact-item">
+      GitHub
+    </a>
+
+    <a href="https://www.linkedin.com/in/ahdab-osama-ai/"
+       target="_blank" rel="noopener noreferrer"
+       class="contact-item">
+      LinkedIn
+    </a>
+
+    <a href="tel:+201025378966" class="contact-item">
+      +20 102 537 8966
+    </a>
+
   </div>
+
 </section>
+
+<!-- FOOTER -->
 
 <footer>
   <span>© 2026 AHDAB OSAMA</span>
   <span>AHDAB.OS</span>
 </footer>
 
+<!-- ANIMATIONS -->
+
 <script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 60);
-    });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, i * 60);
+
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.reveal').forEach(el => {
+  observer.observe(el);
+});
 </script>
+
 </body>
 </html>
